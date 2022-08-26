@@ -9,5 +9,5 @@ def main():
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
     for entry in texts:
-        matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', line, re.DOTALL)
+        matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
         print (matches)
