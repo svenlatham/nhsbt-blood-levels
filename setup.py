@@ -9,6 +9,6 @@ setup(name='nhsbt_acquire',
     author_email='sven@svenlatham.com',
     packages=['nhsbt_acquire'],
     entry_points={
-        'console_scripts': ['nhsbt_acquire=nhsbt_acquire:main'],
+        'console_scripts': ['nhsbt_acquire=nhsbt_acquire.cli:main'],
     }
 )
