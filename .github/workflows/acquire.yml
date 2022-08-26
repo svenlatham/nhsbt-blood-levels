@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get repo
-      uses: actions/checkout
+      uses: actions/checkout@v3
     - name: Python
-      uses: actions/setup-python
+      uses: actions/setup-python@v4
+      with:
+        cache: 'pip'
     - name: PIP
       run: pip install -r requirements.txt
     - name: Acquire
