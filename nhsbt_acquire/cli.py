@@ -6,5 +6,6 @@ def main():
     #print(r.text)
     soup = BeautifulSoup(r.text)
     texts = soup.select("div.grid-text")
+    texts = [x for x in texts if 'Text version for accessibility' in x]
     for entry in texts:
         print(entry.text)
