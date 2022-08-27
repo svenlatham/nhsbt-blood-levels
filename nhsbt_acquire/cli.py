@@ -9,13 +9,13 @@ def main():
     soup = BeautifulSoup(r.text)
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
-    df = pandas.DataFrame(texts, columns=['latest'])
-
+    json = json.dumps(texts)
+    print(json)
     
     # texts[0] contains blood; texts[1] contains platelets
     # we need to check this in future to be sure!
-    blood = df[0]
-    platelets = df[1]
+    blood = texts[0]
+    platelets = texts[1]
     
     for entry in blood:
         matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
