@@ -2,6 +2,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 import pandas
+import json
 
 def main():
     r = requests.get("https://hospital.blood.co.uk/business-continuity/blood-stocks/")
