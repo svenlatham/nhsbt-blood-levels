@@ -1,3 +1,0 @@
-[console_scripts]
-nhsbt_acquire = nhsbt_acquire.cli:main
-
