@@ -15,4 +15,4 @@ def main():
             # Presented as a tuple, so we can split that right up
             str = ("%s,%s " % (match[0], match[1]))
             f.write(str)
-    close(f)
+    f.close()
