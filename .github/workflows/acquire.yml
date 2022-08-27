@@ -26,5 +26,5 @@ jobs:
       run: |-
         git config --global user.name "nhsbt-blood-levels"
         git config --global user.email "nhsbt-blood-levels@svenlatham.com"
-        git add nhsbt.txt && git commit -m "Updated NHSBT blood levels"
+        git add *.csv && git commit -m "Updated NHSBT blood levels"
         git push
