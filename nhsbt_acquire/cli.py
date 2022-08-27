@@ -10,8 +10,8 @@ def main():
     soup = BeautifulSoup(r.text)
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
-    json = json.dumps(texts)
-    print(json)
+    debug = json.dumps(texts)
+    print(debug)
     
     # texts[0] contains blood; texts[1] contains platelets
     # we need to check this in future to be sure!
