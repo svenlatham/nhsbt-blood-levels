@@ -9,11 +9,13 @@ def main():
     soup = BeautifulSoup(r.text)
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
-    f = open("nhsbt.txt","a")
+    df = pandas.DataFrame(texts, columns=['latest'])
+
+    
     # texts[0] contains blood; texts[1] contains platelets
     # we need to check this in future to be sure!
-    blood = texts[0]
-    platelets = texts[1]
+    blood = df[0]
+    platelets = df[1]
     
     for entry in blood:
         matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
@@ -25,4 +27,3 @@ def main():
         df = pandas.DataFrame.from_items(matches)
         df.to_csv("platelets.csv",mode='a', header=not os.path.exists('platelets.csv'))
 
-    f.close()
