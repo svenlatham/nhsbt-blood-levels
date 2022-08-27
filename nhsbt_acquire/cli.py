@@ -11,6 +11,8 @@ def main():
     f = open("nhsbt.txt","a")
     for entry in texts:
         matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
-        print (str(matches))
-        f.write(matches)
+        for match in matches:
+            # Presented as a tuple, so we can split that right up
+            str = ("%s,%s " % (match[0], match[1]))
+            f.write(str)
     close(f)
