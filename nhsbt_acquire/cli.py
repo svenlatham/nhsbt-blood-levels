@@ -2,7 +2,6 @@ import requests
 import re
 from bs4 import BeautifulSoup
 import pandas
-import json
 
 def main():
     r = requests.get("https://hospital.blood.co.uk/business-continuity/blood-stocks/")
@@ -10,8 +9,7 @@ def main():
     soup = BeautifulSoup(r.text)
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
-    debug = json.dumps(texts)
-    print(debug)
+    print(repr(texts))
     
     # texts[0] contains blood; texts[1] contains platelets
     # we need to check this in future to be sure!
