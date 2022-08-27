@@ -16,13 +16,11 @@ def main():
     blood = texts[0]
     platelets = texts[1]
     
-    for entry in blood:
-        matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
-        df = pandas.DataFrame.from_items(matches)
-        df.to_csv("blood.csv",mode='a', header=not os.path.exists('blood.csv'))
-    
-    for entry in platelets:
-        matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', entry.text, re.DOTALL)
-        df = pandas.DataFrame.from_items(matches)
-        df.to_csv("platelets.csv",mode='a', header=not os.path.exists('platelets.csv'))
+    matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', blood.text, re.DOTALL)
+    df = pandas.DataFrame.from_items(matches)
+    df.to_csv("blood.csv",mode='a', header=not os.path.exists('blood.csv'))
+
+    matches = re.findall('([OAB\+\-]+) ([0-9\.]+)', platelets.text, re.DOTALL)
+    df = pandas.DataFrame.from_items(matches)
+    df.to_csv("platelets.csv",mode='a', header=not os.path.exists('platelets.csv'))
 
