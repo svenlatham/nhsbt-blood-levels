@@ -7,7 +7,7 @@ import os
 def main():
     r = requests.get("https://hospital.blood.co.uk/business-continuity/blood-stocks/")
     #print(r.text)
-    soup = BeautifulSoup(r.text)
+    soup = BeautifulSoup(r.text, features='html.parser')
     texts = soup.select("div.grid-text")
     texts = [x for x in texts if 'Text version for accessibility' in x.text]
     print(repr(texts))
