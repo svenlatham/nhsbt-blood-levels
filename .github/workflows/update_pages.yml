@@ -24,7 +24,7 @@ jobs:
         pip install pandas plotly jinja2
 
     - name: Generate charts and pages
-      run: python create_page.py
+      run: python create-page.py
 
     - name: Commit and push changes
       run: |
