@@ -1,9 +1,6 @@
 name: Acquire latest stock levels from NHSBT website
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: "0 10 * * *"
 
