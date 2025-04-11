@@ -8,29 +8,31 @@
         <p>This page shows the daily blood stock levels for all blood groups in the UK, updated daily. The interactive chart below lets you explore the trends for each group.</p>
     </div>
 
-    <h2>Most Recent Data</h2>
-    <p>From {{ date_most_recent }}</p>
-    <p>Figure shows how many days' stock are estimated to be held.</p>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                {% for blood_group in most_recent_data.keys() %}
-                    {% if blood_group != 'Date' %}
-                        <th>{{ blood_group }}</th>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {% for blood_group, stock_level in most_recent_data.items() %}
-                    {% if blood_group != 'Date' %}
-                        <td>{{ stock_level }}</td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        </tbody>
-    </table>
+    <div class="mx-auto py-3" style="max-width: 800px">
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    {% for blood_group in most_recent_data.keys() %}
+                        {% if blood_group != 'Date' %}
+                            <th>{{ blood_group }}</th>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for blood_group, stock_level in most_recent_data.items() %}
+                        {% if blood_group != 'Date' %}
+                            <td>{{ stock_level }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <p>Figure shows how many days' stock are estimated to be held. Last updated {{ date_most_recent }}</p>
+    </div>
+
 
     <div class="chart">
         <iframe src="blood_stock_chart.html" width="100%" height="600"></iframe>

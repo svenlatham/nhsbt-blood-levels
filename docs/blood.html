@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Stock Levels</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 </head>
 <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.svenlatham.com/">svenlatham.com</a>
-            》<a class="navbar-brand" href="https://www.svenlatham.com/projects/">projects</a>
-            》<a class="navbar-brand" href="/">nhsbt-blood-levels</a>
-            <ul class="navbar-nav me-auto mb-lg-0 mt-1">
-                <li class="nav-item">
-                    <a class="nav-link " href="blood.html">Blood Levels</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="platelets.html">Platelet Levels</a>
-                </li>
-              </ul>
+
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="text-uppercase fw-bold nav-link px-2 link-body-emphasis">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f00" class="bi bi-droplet-fill" viewBox="0 0 16 16">
+                        <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/>
+                      </svg>
+                      Stocks</a>
+            <ul class="nav mx-2 mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 link-secondary">About</a></li>
+                <li><a href="blood.html" class="nav-link px-2 link-secondary">Blood Levels</a></li>
+                <li><a href="platelets.html" class="nav-link px-2 link-secondary">Platelet Levels</a></li>
+            </ul>
+
             </div>
-          </div>
-    </nav>
+        </div>
+    </header>
+
+
     <div class="container my-5">
         
     <h1>Blood Stock Levels</h1>
@@ -33,85 +38,87 @@
         <p>This page shows the daily blood stock levels for all blood groups in the UK, updated daily. The interactive chart below lets you explore the trends for each group.</p>
     </div>
 
-    <h2>Most Recent Data</h2>
-    <p>From 2025-04-09</p>
-    <p>Figure shows how many days' stock are estimated to be held.</p>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                
+    <div class="mx-auto py-3" style="max-width: 800px">
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
                     
-                        <th>O-</th>
+                        
+                            <th>O-</th>
+                        
                     
-                
+                        
+                            <th>A-</th>
+                        
                     
-                        <th>A-</th>
+                        
+                            <th>B-</th>
+                        
                     
-                
+                        
+                            <th>AB-</th>
+                        
                     
-                        <th>B-</th>
+                        
+                            <th>O+</th>
+                        
                     
-                
+                        
+                            <th>A+</th>
+                        
                     
-                        <th>AB-</th>
+                        
+                            <th>B+</th>
+                        
                     
-                
+                        
+                            <th>AB+</th>
+                        
                     
-                        <th>O+</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     
-                
+                        
+                            <td>3.97</td>
+                        
                     
-                        <th>A+</th>
+                        
+                            <td>11.85</td>
+                        
                     
-                
+                        
+                            <td>3.18</td>
+                        
                     
-                        <th>B+</th>
+                        
+                            <td>5.25</td>
+                        
                     
-                
+                        
+                            <td>4.6</td>
+                        
                     
-                        <th>AB+</th>
+                        
+                            <td>4.47</td>
+                        
                     
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                
+                        
+                            <td>7.04</td>
+                        
                     
-                        <td>3.97</td>
+                        
+                            <td>10.34</td>
+                        
                     
-                
-                    
-                        <td>11.85</td>
-                    
-                
-                    
-                        <td>3.18</td>
-                    
-                
-                    
-                        <td>5.25</td>
-                    
-                
-                    
-                        <td>4.6</td>
-                    
-                
-                    
-                        <td>4.47</td>
-                    
-                
-                    
-                        <td>7.04</td>
-                    
-                
-                    
-                        <td>10.34</td>
-                    
-                
-            </tr>
-        </tbody>
-    </table>
+                </tr>
+            </tbody>
+        </table>
+        <p>Figure shows how many days' stock are estimated to be held. Last updated 2025-04-09</p>
+    </div>
+
 
     <div class="chart">
         <iframe src="blood_stock_chart.html" width="100%" height="600"></iframe>
@@ -127,7 +134,7 @@
 
     <footer class="text-center text-muted mt-4">
         <div class="text-center p-3">
-        <p>Generated 2025-04-09 22:45:48 BST+0100</p>
+        <p>Generated 2025-04-11 22:17:57 BST+0100</p>
         <p>Source: <a href="https://github.com/svenlatham/nhsbt-blood-levels">https://github.com/svenlatham/nhsbt-blood-levels</a></p>
 
         </div>
