@@ -15,6 +15,8 @@ current_date = datetime.now(london_tz).strftime('%Y-%m-%d %H:%M:%S %Z%z')
 
 # Pass in a dataframe and column name, and filter out any outliers > around 80% of average adjacent figures
 def filter_outliers(series):
+    # Ensure numeric data for calculations, coercing errors to NaN
+    series = pd.to_numeric(series, errors='coerce')
     filtered_values = series.copy()
     for i in range(len(series)):
         current_value = series.iloc[i]
