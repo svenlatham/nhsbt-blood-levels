@@ -35,7 +35,10 @@ def main():
         row = pandas.DataFrame(vals, index=[0])
         if os.path.exists(csv_file):
             df = pandas.read_csv(csv_file)
-            df = pandas.concat([df, row], ignore_index = True)
+            df = pandas.concat([df, row], ignore_index=True)
+            # If we already have an entry for this date replace it to avoid
+            # duplicated rows which can skew the charts.
+            df = df.drop_duplicates(subset=["date"], keep="last")
         else:
             df = row
         df.to_csv(csv_file, index=False)
