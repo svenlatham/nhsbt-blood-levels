@@ -16,10 +16,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout
       
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python
       with:
         python-version: '3.x'
 
@@ -35,7 +35,7 @@ jobs:
       run: python create-page.py
 
     - name: Upload artifact for deployment
-      uses: actions/upload-pages-artifact@v5
+      uses: actions/upload-pages-artifact
       with:
         path: docs
 
